@@ -17,12 +17,12 @@ wget $EXPORT_HTML -O $REPERTOIRE/temp
 
 if test $NB_FICHIERS -lt 1
 then
-	mv $REPERTOIRE/temp $REPERTOIRE/$(date +%d%m%Y_%H%M).html
+	mv $REPERTOIRE/temp $REPERTOIRE/$(date +%Y%m%d_%H%M).html
 else
 	if test $(diff $REPERTOIRE/temp $REPERTOIRE/$DERNIERE_COPIE | wc -l) -eq 0
 	then
 		rm $REPERTOIRE/temp
 	else
-		mv $REPERTOIRE/temp $REPERTOIRE/$(date +%d%m%Y_%H%M).html
+		mv $REPERTOIRE/temp $REPERTOIRE/$(date +%Y%m%d_%H%M).html
 	fi
 fi
